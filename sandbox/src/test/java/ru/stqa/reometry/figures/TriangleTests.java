@@ -20,7 +20,18 @@ public class TriangleTests {
         double result = s.arae();
         Assertions.assertEquals(2.0, Math.round(result));
     }
-}
+
+    @Test
+    void cannotCreatTriangleWithNegativSide () {
+        try {
+            new Triangle(-5.0,2.0,2.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception) {
+
+        }
+    }
+
+    }
 
 
 
