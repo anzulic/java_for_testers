@@ -36,4 +36,7 @@ public class SquareTests {
     void canCalculatePerimetr(){
         Assertions.assertEquals(20.0, Square.perimetr(5.0));
     }
+
+
+
 }
