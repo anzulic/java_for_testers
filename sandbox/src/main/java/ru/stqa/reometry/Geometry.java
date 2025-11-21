@@ -1,6 +1,6 @@
 package ru.stqa.reometry;
 
-import ru.stqa.reometry.figures.Rectangl;
+import ru.stqa.reometry.figures.Rectangle;
 import ru.stqa.reometry.figures.Square;
 
 public class Geometry {
@@ -9,7 +9,7 @@ public class Geometry {
         Square.printSquareArea(new Square(7.0));
 
 
-        Rectangl.printRectanglArea(3.0, 5.0);
+        Rectangle.printRectanglArea(3.0, 5.0);
     }
 
 }

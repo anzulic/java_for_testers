@@ -1,15 +1,18 @@
 package ru.stqa.reometry.figures;
 
-public class Rectangl {
+public class Rectangle {
 
     //Свойства объекта
     private double a;
     private double b;
 
     //Конструктордля прямоугольника
-    public Rectangl (double a, double b) {
+    public Rectangle(double a, double b) {
         this.a = a;
         this.b = b;
+        if (a < 0 || b < 0){
+            throw new IllegalArgumentException ("Rectangle side should be non-negative");
+        }
     }
     //Печатает площадь прямоугольника
     public static void printRectanglArea(double a, double b) {

@@ -8,8 +8,12 @@ public class Square {
     //Создаем конструктор объекта
     public Square(double side) {
         this.side = side;
+        if (side < 0){
+            throw new IllegalArgumentException("Сторона не может быть меньше 0");
+        }
 
     }
+
 
     //Функция Печатает площадь квдрата
     public static void printSquareArea(Square s){
