@@ -12,21 +12,21 @@ public class GroupCreationTests {
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-    }
-
-    @Test
-    public void test() {
         driver.get("http://localhost/addressbook/");
         driver.manage().window().setSize(new Dimension(959, 438));
         driver.findElement(By.name("user")).sendKeys("admin");
         driver.findElement(By.name("pass")).sendKeys("secret");
         driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
+    }
 
+    @AfterEach
+    public void tearDown() {
+        //driver.findElement(By.linkText("Logout")).click();
+        driver.quit();
+    }
+
+    @Test
+    public void canCreatGroup() {
         driver.findElement(By.linkText("groups")).click();
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).click();
@@ -36,7 +36,18 @@ public class GroupCreationTests {
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("group page")).click();
         driver.findElement(By.linkText("Logout")).click();
-        driver.findElement(By.name("user")).sendKeys("admin");
-        driver.findElement(By.name("pass")).sendKeys("secret");
+    }
+
+    @Test
+    public void canCreatGroupWithEmptyName() {
+        driver.findElement(By.linkText("groups")).click();
+        driver.findElement(By.name("new")).click();
+        driver.findElement(By.name("group_name")).click();
+        driver.findElement(By.name("group_name")).sendKeys("");
+        driver.findElement(By.name("group_header")).sendKeys("");
+        driver.findElement(By.name("group_footer")).sendKeys("");
+        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.linkText("group page")).click();
+        driver.findElement(By.linkText("Logout")).click();
     }
 }
