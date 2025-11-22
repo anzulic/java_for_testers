@@ -1,17 +1,9 @@
 package ru.stqa.reometry.figures;
 
-public class Triangle {
-
-    //Свойства объекта
-    private double a;
-    private double b;
-    private double c;
+public record Triangle(double a, double b, double c) {
 
     //Конструктор
-    public Triangle(double a, double b, double c){
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    public Triangle {
         if (a < 0 || b < 0 || c < 0){
             throw new IllegalArgumentException ("Triangle side should be non-negative");
         }

@@ -1,13 +1,9 @@
 package ru.stqa.reometry.figures;
 
-public class Square {
-
-    //Каждый объект типа Square будет иметь свойство side
-    private double side;
+public record Square (double side) {
 
     //Создаем конструктор объекта
-    public Square(double side) {
-        this.side = side;
+    public Square {
         if (side < 0){
             throw new IllegalArgumentException("Сторона не может быть меньше 0");
         }

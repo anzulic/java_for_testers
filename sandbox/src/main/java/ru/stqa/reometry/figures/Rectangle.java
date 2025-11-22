@@ -1,19 +1,14 @@
 package ru.stqa.reometry.figures;
 
-public class Rectangle {
-
-    //Свойства объекта
-    private double a;
-    private double b;
+public record Rectangle (double a, double b) {
 
     //Конструктордля прямоугольника
-    public Rectangle(double a, double b) {
-        this.a = a;
-        this.b = b;
+    public Rectangle {
         if (a < 0 || b < 0){
             throw new IllegalArgumentException ("Rectangle side should be non-negative");
         }
     }
+
     //Печатает площадь прямоугольника
     public static void printRectanglArea(double a, double b) {
         var text = String.format("Площадь прямоугольника со сторонами %f и %f = %f",a,b,rectanglArea(a,b));
